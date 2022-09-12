@@ -13,4 +13,4 @@ const anuncioSchema = mongoose.Schema({
 const Anuncio = mongoose.model('Anuncio', anuncioSchema);
 
 // exportamos el modelo(opcional)
-module.exports = Agente;
+module.exports = Anuncio;
