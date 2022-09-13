@@ -2,46 +2,60 @@
 
 const instrumentos = [
     {
-        name: 'Guitar_Aria_pro2',
+        name: 'Guitarra Aria pro2',
         sale: true,
         price: 350.00,
-        photo: 'ariap2.png',
-        tags: ['music', 'instrument', 'chord', 'electric']
+        photo: 'ariaPro2.png',
+        tags: ['instrument', 'chord', 'electric', 'guitar']
     },
     {
-        name: 'Guitar_Gibson_Les_Paul',
+        name: 'Guitarra ElectricaAria C Mac',
         sale: false,
         price: 1000.00,
-        photo: 'gibson.png',
-        tags: ['music', 'instrument', 'chord', 'electric']
+        photo: 'ariaCMac.png',
+        tags: ['guitar', 'instrument', 'chord', 'electric']
     },
     {
-        name: 'Guitar_Jose_Penades',
+        name: 'Guitarra Española Josep Penades',
         sale: true,
         price: 550.00,
-        photo: 'paca.png',
-        tags: ['music', 'instrument', 'chord', 'acustic']
+        photo: 'acustic.png',
+        tags: ['guitar', 'instrument', 'chord', 'acustic']
     },
     {
-        name: 'Flute',
+        name: 'Flauta travesera',
         sale: true,
         price: 850.00,
         photo: 'flauta.png',
-        tags: ['music', 'instrument', 'wind', 'wood']
+        tags: ['acustic', 'instrument', 'wind', 'wood']
     },
     {
-        name: 'Drums',
+        name: 'Amplificador Marshall Combo 100',
         sale: false,
         price: 1500.00,
-        photo: 'battery.png',
-        tags: ['music', 'instrument', 'percussion']
+        photo: 'marshall.png',
+        tags: ['accesory', 'booster', 'electric','guitar']
     },
     {
-        name: 'Bass',
+        name: 'Pedal Metal Zone',
+        sale: false,
+        price: 150.00,
+        photo: 'metalZone.png',
+        tags: ['accesory', 'guitar', 'effects', 'electric']
+    },
+    {
+        name: 'Atril',
         sale: true,
-        price: 550,
-        photo: 'bajo.png',
-        tags: ['music', 'instrument', 'chord', 'electric']
+        price: 90.00,
+        photo: 'atril.png',
+        tags: ['accesory']
+    },
+    {
+        name: 'Soporte Guitarra',
+        sale: true,
+        price: 40.00,
+        photo: 'soporteGuitarra.png',
+        tags: ['accesory', 'guitar']
     }
 ];
 

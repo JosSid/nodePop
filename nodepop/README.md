@@ -1,5 +1,6 @@
 # nodePop
 
+
 ## 1-Para arrancar la aplicación:
 
 ### La primera vez que se arranque la aplicación:
@@ -11,6 +12,7 @@ node initDB.js
 ```
 
 Este comando ejecutara el fichero que resetea la base de datos dejandola en su estado inicial, por lo tanto solo ejecutarlo en el caso que se desee resetear la base de datos.
+
 ### En modo producción:
 
 ```

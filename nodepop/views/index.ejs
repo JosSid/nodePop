@@ -5,7 +5,34 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
+    <h1 class="titulo"><%= title %> MUSIC STORE</h1>
     <p>Welcome to <%= title %></p>
+
+    <h2>ANUNCIOS</h3>
+
+    <% anuncios.forEach(anuncio => { %>
+
+      <% if(anuncio.sale) { %>
+        <h3>Vendo</h3>
+      <% } else { %>
+        <h3>Busco</h3>
+      <% } %>
+
+      <img src="/images/<%= anuncio.photo %>" alt="">
+     
+      <p><%= anuncio.name %> </p>
+
+      <% if(anuncio.sale) { %>
+        <p>Precio del producto: <%= anuncio.price %> €</p>
+      <% } else { %>
+        <p>Dispuesto a pagar hasta: <%= anuncio.price %> €</p>
+      <% } %>
+
+    <% }) %>
+
+
+    
+
+
   </body>
 </html>

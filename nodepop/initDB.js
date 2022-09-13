@@ -11,7 +11,9 @@ const Anuncio = require('./models/Anuncio');
 
 async function main() {
 
-    const continuar = await pregunta('Estas seguro, seguro, seguro que quieres borrar la base de datos y dejarla en su estado inicial?  Responda si o no y pulse enter:            ');
+     await connection.$initialConnection
+
+    const continuar = await pregunta('Estas seguro, seguro, seguro que quieres borrar la base de datos y dejarla en su estado inicial? ( si / no ) ');
 
     if(!continuar) {
         process.exit()
