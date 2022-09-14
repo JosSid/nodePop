@@ -54,6 +54,20 @@ Para buscar anuncios filtrados por tag usaremos la siguiente ruta:
 http://localhost:3000/tags/<tag de busqueda>
 ```
 
+### Pagina filtrada por vendo o busco.
+
+Si buscamos anuncios de venta usaremos esta ruta:
+
+```
+http://localhost:3000/sale/vendo
+```
+
+Si buscamos anuncios donde se busque algo en particular usaremos la siguiente ruta:
+
+```
+http://localhost:3000/sale/busco
+```
+
 ## Rutas del API.
 
 ### Para busquedas de anuncios
