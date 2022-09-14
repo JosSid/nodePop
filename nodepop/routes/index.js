@@ -24,9 +24,9 @@ router.get('/', async function(req, res, next) {
   res.render('index', { title: 'NodeRock', anuncios, listTags });
 });
 
-router.get('/tags/:tag', async (req, res, next) => {
-  const tags = req.params.tag;
-  const anuncios = await Anuncio.find({tags: tags})
+router.get('/tags/:tag?', async (req, res, next) => {
+  const tag = req.params.tag;
+  const anuncios = await Anuncio.find({tags: tag})
   const listTags = await crearTags();
   res.render('index', { title: 'NodeRock' , anuncios, listTags})
 });

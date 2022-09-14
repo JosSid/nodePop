@@ -46,6 +46,14 @@ Para acceder a la pagina de inicio de la web:
 http://localhost:3000/
 ```
 
+### Pagina filtrada por tag.
+
+Para buscar anuncios filtrados por tag usaremos la siguiente ruta:
+
+```
+http://localhost:3000/tags/<tag de busqueda>
+```
+
 ## Rutas del API.
 
 ### Para busquedas de anuncios
