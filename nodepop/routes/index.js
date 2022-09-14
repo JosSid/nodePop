@@ -17,9 +17,6 @@ async function crearTags() {
 };
 
 
-
-
-
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   const anuncios = await Anuncio.find();
@@ -27,4 +24,11 @@ router.get('/', async function(req, res, next) {
   res.render('index', { title: 'NodeRock', anuncios, listTags });
 });
 
-module.exports = router;
+router.get('/tags/:tag', async (req, res, next) => {
+  const tags = req.params.tag;
+  const anuncios = await Anuncio.find({tags: tags})
+  const listTags = await crearTags();
+  res.render('index', { title: 'NodeRock' , anuncios, listTags})
+});
+
+module.exports = router; 
