@@ -6,7 +6,7 @@ const instrumentos = [
         sale: true,
         price: 350.00,
         photo: 'ariaPro2.png',
-        tags: ['instrument', 'chord', 'electric', 'guitar']
+        tags: ['guitar', 'instrument', 'chord', 'electric']
     },
     {
         name: 'Guitarra ElectricaAria C Mac',

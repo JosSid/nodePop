@@ -36,6 +36,16 @@ const anuncioSchema = mongoose.Schema({
 });
 ```
 
+## Rutas del web site.
+
+### Pagina principal.
+
+Para acceder a la pagina de inicio de la web:
+
+```
+http://localhost:3000/
+```
+
 ## Rutas del API.
 
 ### Para busquedas de anuncios
