@@ -8,14 +8,29 @@ router.get('/', async (req, res, next) => {
     try {
 
         //Añadimos filtros
-        const name = req.query.name;
+        const tag = req.query.tags;
+        const venta = req.query.venta;
 
-        //Creo un filtro vacío para pasarselo al metodo de busqueda con los filtros ue nos lleguen en la query
+        //Creo un filtro vacío para pasarselo al metodo de busqueda con los filtros que nos lleguen en la query.
        const filtro = {}
+        // Filtro por tag
+       if(tag) {
+        filtro.tags = tag;
+       };
+       // Filtro por venta o busqueda
+       if(venta){
+        filtro.sale = venta;
+        if(filtro.sale === 'busco'){
+            filtro.sale = false
+        }
+        if(filtro.sale === 'vendo') {
+            filtro.sale = true
+        }
+       };
 
-       if(name) {
-        filtro.name = name;
-       }
+
+
+
 
         const anuncios = await Anuncio.busca(filtro);
 

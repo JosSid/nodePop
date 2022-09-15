@@ -78,6 +78,28 @@ Para acceder a la pagina principal del APi y recibir la lista de todos los anunc
 http://localhost:3000/api/anuncios
 ```
 
+### Para filtrar las busquedas.
+
+#### Podemos filtrar las busquedas por diferentes criterios, como por ejemplo:
+
+1. Para filtrar buscando por tags de los anuncios:
+```
+http://localhost:3000/api/anuncios/?tags=<tag>
+```
+
+2. Para filtrar si el anuncio es de venta o de busqueda:
+
+**Si queremos filtrar para obtener los anuncios de productos que estan a la venta usaremos la ruta:**
+```
+http://localhost:3000/api/anuncios/?venta=vendo
+```
+**Si por el contrario queremos recibir los anuncios de productos que se buscan usaremos la ruta:**
+```
+http://localhost:3000/api/anuncios/?venta=busco
+```
+
+
+
 Para buscar anuncios por tag:
 
 Los tags de busqueda para nuestros anuncios seran:
