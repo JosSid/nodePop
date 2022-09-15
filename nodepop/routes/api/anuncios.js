@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const {query, validationResult} = require('express-validator');
 const Anuncio = require('../../models/Anuncio');
 const crearTags = require('../../data/crearTags')
 
@@ -50,20 +49,7 @@ router.get('/', async (req, res, next) => {
 
 });
 
-// Get/api/anuncios/tags
-// Devuelve los anuncios que incluyan dicho tag.
-/* router.get('/:tags', async (req, res, next) => {
-    try {
 
-        const tag = req.params.tags;
-
-        const anuncios = await Anuncio.find({tags: tag});
-
-        res.json({results: anuncios});
-    } catch(err){
-        next(err);
-    }
-}); */
 
 // PUT /api/anuncios/(_id) {body}
 //Para actualizar un anuncio

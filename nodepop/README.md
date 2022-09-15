@@ -46,27 +46,6 @@ Para acceder a la pagina de inicio de la web:
 http://localhost:3000/
 ```
 
-### Pagina filtrada por tag.
-
-Para buscar anuncios filtrados por tag usaremos la siguiente ruta:
-
-```
-http://localhost:3000/tags/<tag de busqueda>
-```
-
-### Pagina filtrada por vendo o busco.
-
-Si buscamos anuncios de venta usaremos esta ruta:
-
-```
-http://localhost:3000/sale/vendo
-```
-
-Si buscamos anuncios donde se busque algo en particular usaremos la siguiente ruta:
-
-```
-http://localhost:3000/sale/busco
-```
 
 ## Rutas del API.
 
@@ -83,20 +62,49 @@ http://localhost:3000/api/anuncios
 #### Podemos filtrar las busquedas por diferentes criterios, como por ejemplo:
 
 1. Para filtrar buscando por tags de los anuncios:
+
+#### En el Web Site:
+```
+http://localhost:3000/?tags=<tag>
+```
+
+#### En el API:
 ```
 http://localhost:3000/api/anuncios/?tags=<tag>
 ```
 
 2. Para filtrar si el anuncio es de venta o de busqueda:
 
-**Si queremos filtrar para obtener los anuncios de productos que estan a la venta usaremos la ruta:**
+Si queremos **filtrar** para obtener los **anuncios** de productos que estan a la **venta** usaremos la ruta:
+#### En el Web Site:
+```
+http://localhost:3000/?venta=vendo
+```
+#### En el API:
 ```
 http://localhost:3000/api/anuncios/?venta=vendo
 ```
-**Si por el contrario queremos recibir los anuncios de productos que se buscan usaremos la ruta:**
+Si por el contrario queremos **recibir** los **anuncios** de productos que se **buscan** usaremos la ruta:
+#### En el Web Site:
+```
+http://localhost:3000/?venta=busco
+```
+#### En el API:
 ```
 http://localhost:3000/api/anuncios/?venta=busco
 ```
+
+3. Para filtrar por nombre de anuncio:
+#### En el Web Site:
+```
+http://localhost:3000/?name=<nombre>
+```
+
+#### En el API:
+```
+http://localhost:3000/api/anuncios/?name=<nombre>
+```
+
 ### Paginación
 
 Para la paginación usaremos los siguientes parámetros:
@@ -105,18 +113,25 @@ Para la paginación usaremos los siguientes parámetros:
 
 **limit** : Será el parametro que marcara el número de anuncios que deseamos recibir. al pasarle el valor **2** mostrará 2 anuncios.
 
-Ejemplo: 
+Ejemplos: 
+#### En el Web Site:
+```
+http://localhost:3000/?skip=2&limit=2
+```
+#### En el API:
 ```
 http://localhost:3000/api/anuncios/?skip=2&limit=2
 ```
+### Todos los parámetros anteriórmente nombrados podemos encadenarlos en la ruta pasando varios filtros al mismo tiempo.
 
-Para buscar anuncios por tag:
-
-Los tags de busqueda para nuestros anuncios seran:
-music, lifestyle, wind instrument
-
+Ejemplos:
+#### En el Web Site:
 ```
-http://localhost:3000/api/anuncios/<tag de busqueda>
+http://localhost:3000/?tags=guitar&venta=vendo&skip=1&limit=3
+```
+#### En el API:
+```
+http://localhost:3000/api/anuncios/?tags=guitar&venta=vendo&skip=1&limit=3
 ```
 
 ### Para actualizar anuncios:
