@@ -6,7 +6,18 @@ const Anuncio = require('../../models/Anuncio');
 //petición de tipo GET para mostrar la lista de anuncios
 router.get('/', async (req, res, next) => {
     try {
-        const anuncios = await Anuncio.find();
+
+        //Añadimos filtros
+        const name = req.query.name;
+
+        //Creo un filtro vacío para pasarselo al metodo de busqueda con los filtros ue nos lleguen en la query
+       const filtro = {}
+
+       if(name) {
+        filtro.name = name;
+       }
+
+        const anuncios = await Anuncio.busca(filtro);
 
         res.json( {results: anuncios });// respondemos con un JSON
     } catch(err) { //Si se produce algun error lo capturamos aqui y le pasamos next con el error
@@ -17,7 +28,7 @@ router.get('/', async (req, res, next) => {
 
 // Get/api/anuncios/tags
 // Devuelve los anuncios que incluyan dicho tag.
-router.get('/:tags', async (req, res, next) => {
+/* router.get('/:tags', async (req, res, next) => {
     try {
 
         const tag = req.params.tags;
@@ -28,7 +39,7 @@ router.get('/:tags', async (req, res, next) => {
     } catch(err){
         next(err);
     }
-});
+}); */
 
 // PUT /api/anuncios/(_id) {body}
 //Para actualizar un anuncio
