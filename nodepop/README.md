@@ -97,8 +97,18 @@ http://localhost:3000/api/anuncios/?venta=vendo
 ```
 http://localhost:3000/api/anuncios/?venta=busco
 ```
+### Paginación
 
+Para la paginación usaremos los siguientes parámetros:
 
+**skip** : Será el parámetro que marcara a partir de cual anuncio queremos recibir. Al pasarle el valor **2** descartará los dos primeros anuncios y el primer anuncio que mostrará será el **3**.
+
+**limit** : Será el parametro que marcara el número de anuncios que deseamos recibir. al pasarle el valor **2** mostrará 2 anuncios.
+
+Ejemplo: 
+```
+http://localhost:3000/api/anuncios/?skip=2&limit=2
+```
 
 Para buscar anuncios por tag:
 

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const {query, validationResult} = require('express-validator');
 const Anuncio = require('../../models/Anuncio');
+const crearTags = require('../../data/crearTags')
+
 
 //petición de tipo GET para mostrar la lista de anuncios
 router.get('/', async (req, res, next) => {
@@ -10,9 +12,14 @@ router.get('/', async (req, res, next) => {
         //Añadimos filtros
         const tag = req.query.tags;
         const venta = req.query.venta;
+        const name = req.query.name;
+
+        //paginación
+        const skip = req.query.skip;
+        const limit = req.query.limit;
 
         //Creo un filtro vacío para pasarselo al metodo de busqueda con los filtros que nos lleguen en la query.
-       const filtro = {}
+       const filtro = {};
         // Filtro por tag
        if(tag) {
         filtro.tags = tag;
@@ -21,20 +28,22 @@ router.get('/', async (req, res, next) => {
        if(venta){
         filtro.sale = venta;
         if(filtro.sale === 'busco'){
-            filtro.sale = false
-        }
+            filtro.sale = false;
+        };
         if(filtro.sale === 'vendo') {
-            filtro.sale = true
-        }
+            filtro.sale = true;
+        };
+       };
+
+       if(name) {
+        filtro.name = name;
        };
 
 
+        const anuncios = await Anuncio.busca(filtro, skip, limit);
+        const listTags = await crearTags();
 
-
-
-        const anuncios = await Anuncio.busca(filtro);
-
-        res.json( {results: anuncios });// respondemos con un JSON
+        res.json( {tags: listTags, results: anuncios });// respondemos con un JSON
     } catch(err) { //Si se produce algun error lo capturamos aqui y le pasamos next con el error
         next(err);
     }
@@ -70,7 +79,7 @@ router.put('/:_id', async (req,res,next) => {
 
     }catch(err){
         next(err);
-    }
+    };
 });
 
 //POST /api/anuncios {body}

@@ -2,19 +2,8 @@ var express = require('express');
 const { find } = require('../models/Anuncio');
 var router = express.Router();
 const Anuncio = require('../models/Anuncio');
+const crearTags = require('../data/crearTags')
 
-async function crearTags() {
-  const anuncios = await Anuncio.find();
-  const tagsList = []
-  for(let anuncio of anuncios){
-    for(let tag of anuncio.tags){
-      tagsList.push(tag)
-    }
-  }
-
-  const tags = [...new Set(tagsList)].join(' , ')
-  return tags
-};
 
 
 /* GET home page. */
