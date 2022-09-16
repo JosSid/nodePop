@@ -122,6 +122,20 @@ http://localhost:3000/?skip=2&limit=2
 ```
 http://localhost:3000/api/anuncios/?skip=2&limit=2
 ```
+
+### Ordenación:
+Para ordenar los anuncios pasaremos en la ruta el parametro **sort** acompañado del **campo** por el cual queremos ordenar los anuncios.
+
+En caso de que querramos invertir el orden añadiremos antes del **campo** de ordenación el simbolo **-** .
+
+Ejemplos:
+```
+http://localhost:3000/?sort=price
+```
+#### En el API:
+```
+http://localhost:3000/api/anuncios/?sort=price
+```
 ### Todos los parámetros anteriórmente nombrados podemos encadenarlos en la ruta pasando varios filtros al mismo tiempo.
 
 Ejemplos:

@@ -17,6 +17,9 @@ router.get('/', async (req, res, next) => {
         const skip = req.query.skip;
         const limit = req.query.limit;
 
+        //Ordenación
+        const sort = req.query.sort;
+
         //Creo un filtro vacío para pasarselo al metodo de busqueda con los filtros que nos lleguen en la query.
        const filtro = {};
         // Filtro por tag
@@ -39,7 +42,7 @@ router.get('/', async (req, res, next) => {
        };
 
 
-        const anuncios = await Anuncio.busca(filtro, skip, limit);
+        const anuncios = await Anuncio.busca(filtro, skip, limit, sort);
         const listTags = await crearTags();
 
         res.json( {tags: listTags, results: anuncios });// respondemos con un JSON

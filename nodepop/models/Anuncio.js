@@ -10,10 +10,11 @@ const anuncioSchema = mongoose.Schema({
 });
 
 // Creamos un metodo estatico para filtrar resultados en el buscador
-anuncioSchema.statics.busca = function(filtro, skip, limit) {
+anuncioSchema.statics.busca = function(filtro, skip, limit, sort) {
     const query = Anuncio.find(filtro);
     query.skip(skip);
     query.limit(limit);
+    query.sort(sort);
     return query.exec();
 };
 

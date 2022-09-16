@@ -20,6 +20,9 @@ router.get('/', async function(req, res, next) {
             //paginación
             const skip = req.query.skip;
             const limit = req.query.limit;
+
+            //Ordenación
+            const sort = req.query.sort;
     
             //Creo un filtro vacío para pasarselo al metodo de busqueda con los filtros que nos lleguen en la query.
            const filtro = {};
@@ -42,7 +45,10 @@ router.get('/', async function(req, res, next) {
             nombres.includes(name) ? filtro.name = name : next(createHttpError(422));
            };
 
-    const anuncios = await Anuncio.busca(filtro, skip, limit);
+           if(price) {
+            
+           };
+    const anuncios = await Anuncio.busca(filtro, skip, limit, sort);
     const listTags = await crearTags();
     
     res.render('index', { title: 'NodeRock', anuncios, listTags });
