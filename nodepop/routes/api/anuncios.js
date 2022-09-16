@@ -1,17 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const Anuncio = require('../../models/Anuncio');
-const crearTags = require('../../data/crearTags')
+const crearTags = require('../../data/crearTags');
+const rangePrices = require('../../data/rangePrices');
+const buscaNombres = require("../../data/names");
+const createHttpError = require("http-errors");
+
 
 
 //petición de tipo GET para mostrar la lista de anuncios
 router.get('/', async (req, res, next) => {
     try {
 
+        const nombres = await buscaNombres();
+
         //Añadimos filtros
         const tag = req.query.tags;
         const venta = req.query.venta;
         const name = req.query.name;
+        const price = req.query.price;
 
         //paginación
         const skip = req.query.skip;
@@ -37,11 +44,16 @@ router.get('/', async (req, res, next) => {
         };
        };
 
-       if(name) {
-        filtro.name = name;
+    if (name) {
+      nombres.includes(name)
+        ? (filtro.name = name)
+        : next(createHttpError(422));
+    }
+
+       if(price) {
+        filtro.price = rangePrices(price);
        };
-
-
+       
         const anuncios = await Anuncio.busca(filtro, skip, limit, sort);
         const listTags = await crearTags();
 

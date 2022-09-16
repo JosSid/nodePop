@@ -3,28 +3,24 @@
 const Anuncio = require('../models/Anuncio');
 
 function rangePrices(string){
-    const filtro = {price: {
-        $gte: undefined,
-        $lte: undefined
-        }}
-        const str = string;
+    let filtro =  {}
         
-        const arrStr = str.split('-')
+    const arrStr = string.split('-')
         
-        if(str.includes('-')){
-            filtro.price.$gte = parseInt(arrStr[0], 10);
-            filtro.price.$lte = parseInt(arrStr[1], 10);
-            if(Number.isNaN(filtro.price.$gte)) {
-                filtro.price.$gte = undefined;
-            };
-            if(Number.isNaN(filtro.price.$lte)) {
-                filtro.price.$lte = undefined;
-            };
+    if(string.includes('-')){
+        filtro.$gte = parseInt(arrStr[0], 10);
+        filtro.$lte = parseInt(arrStr[1], 10);
+        if(Number.isNaN(filtro.$gte)) {
+            filtro.$gte = 0;
         };
-        
-        if(!str.includes('-')){
-            filtro.price = parseInt(str);
+        if(Number.isNaN(filtro.$lte)) {
+            filtro.$lte = Number.MAX_SAFE_INTEGER;
         };
+    };
+        
+    if(!string.includes('-')){
+         filtro = parseInt(string);
+    };
 
     return filtro;
 };
@@ -32,6 +28,6 @@ function rangePrices(string){
 
 
 
-const filtro = rangePrices('200');
-console.log(filtro)
 
+
+module.exports = rangePrices;

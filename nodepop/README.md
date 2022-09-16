@@ -105,6 +105,46 @@ http://localhost:3000/?name=<nombre>
 http://localhost:3000/api/anuncios/?name=<nombre>
 ```
 
+4. Para filtrar por precios:
+
+**price** : Será el parámetro que utilizaremos en la ruta.
+A continuacion le añadiremos el signo **=** seguido del precio que querramos pasar como filtro. 
+
+Si se quiere buscar en un rango entre dos precios, despues del signo **=** añadiremos el **precio minimo** seguido de un **-** y despues el **precio maximo**.
+
+En El caso de usar la busqueda en un rango entre dos precios, si obviamos el **precio minimo** por defecto se le asignara el valor **0**.
+En cambio si obviamos el **precio maximo** se le asignara por defecto el valor **infinito**.
+
+Ejemplos:
+
+1. En estos casos devolverá solo anuncios cuyo precio sea igual al pasado en el parámetro.
+```
+http://localhost:3000/?price=350
+```
+```
+http://localhost:3000/api/anuncios/?price=350
+```
+2. En estos casos devolverá los anuncios cuyo precio este dentro del rango que le hemos pasado en el parámetro.
+```
+http://localhost:3000/?price=350-1000
+```
+```
+http://localhost:3000/api/anuncios/?price=350-1000
+```
+3. En estos casos devolverá los anuncios cuyo precio sea mayor al valor que le hemos pasado en el parámetro.
+```
+http://localhost:3000/?price=350-
+```
+```
+http://localhost:3000/api/anuncios/?price=350-
+```
+4. En estos casos devolverá los anuncios cuyo precio sea menor al valor que le hemos pasado en el parámetro.
+```
+http://localhost:3000/?price=-1000
+```
+```
+http://localhost:3000/api/anuncios/?price=-1000
+```
 ### Paginación
 
 Para la paginación usaremos los siguientes parámetros:
