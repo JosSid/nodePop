@@ -3,15 +3,15 @@ var router = express.Router();
 const Anuncio = require("../models/Anuncio");
 const crearTags = require("../data/crearTags");
 const buscaNombres = require("../data/names");
-const {query, validationResult } = require("express-validator");
 const createHttpError = require("http-errors");
 const rangePrices = require("../data/rangePrices");
+const filtraArray = require("../data/filtraArray");
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
   try {
     const nombres = await buscaNombres();
-    console.log(nombres)
+    console.log(nombres);
 
     //Añadimos filtros
     const tag = req.query.tags;
@@ -31,7 +31,7 @@ router.get("/", async function (req, res, next) {
     // Filtro por tag
     if (tag) {
       filtro.tags = tag;
-    }
+    };
     // Filtro por venta o busqueda
     if (venta) {
       filtro.sale = venta;
@@ -41,17 +41,19 @@ router.get("/", async function (req, res, next) {
       if (filtro.sale === "vendo") {
         filtro.sale = true;
       }
-    }
+    };
 
     if (name) {
       nombres.includes(name)
         ? (filtro.name = name)
+        : !nombres.includes(name)
+        ? (filtro.name = filtraArray(name, nombres))
         : next(createHttpError(422));
-    }
+    };
 
     if (price) {
       filtro.price = rangePrices(price);
-    }
+    };
 
     const anuncios = await Anuncio.busca(filtro, skip, limit, sort);
     const listTags = await crearTags();

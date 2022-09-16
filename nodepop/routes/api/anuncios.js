@@ -5,7 +5,7 @@ const crearTags = require('../../data/crearTags');
 const rangePrices = require('../../data/rangePrices');
 const buscaNombres = require("../../data/names");
 const createHttpError = require("http-errors");
-
+const filtraArray = require("../../data/filtraArray");
 
 
 //petición de tipo GET para mostrar la lista de anuncios
@@ -44,11 +44,13 @@ router.get('/', async (req, res, next) => {
         };
        };
 
-    if (name) {
-      nombres.includes(name)
-        ? (filtro.name = name)
-        : next(createHttpError(422));
-    }
+       if (name) {
+        nombres.includes(name)
+          ? (filtro.name = name)
+          : !nombres.includes(name)
+          ? (filtro.name = filtraArray(name, nombres))
+          : next(createHttpError(422));
+      };
 
        if(price) {
         filtro.price = rangePrices(price);
