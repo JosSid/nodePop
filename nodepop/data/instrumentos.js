@@ -9,7 +9,7 @@ const instrumentos = [
         tags: ['guitar', 'instrument', 'chord', 'electric']
     },
     {
-        name: 'Guitarra ElectricaAria C Mac',
+        name: 'Guitarra Electrica',
         sale: false,
         price: 1000.00,
         photo: 'ariaCMac.png',
@@ -59,5 +59,5 @@ const instrumentos = [
     }
 ];
 
-module.exports = instrumentos
+module.exports = instrumentos;
 

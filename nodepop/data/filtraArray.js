@@ -1,18 +1,18 @@
 "use strict";
 
 function filtraArray(string, array) {
-  let name = undefined;
+  let names = [];
   for (let i = 0; i < array.length; i++) {
     if (array[i].toLowerCase().startsWith(string.toLowerCase())) {
-      name = array[i];
-      i = array.length - 1;
+      names.push(array[i]);
+      i++;
     } else if (array[i].toLowerCase().includes(string.toLowerCase())) {
-      name = array[i];
-      i = array.length - 1;
+      names.push(array[i]);
+      i++;
     }
   };
 
-  return name;
+  return names;
 };
 
 module.exports = filtraArray;

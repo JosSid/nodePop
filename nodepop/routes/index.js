@@ -11,7 +11,7 @@ const filtraArray = require("../data/filtraArray");
 router.get("/", async function (req, res, next) {
   try {
     const nombres = await buscaNombres();
-    console.log(nombres);
+    
 
     //Añadimos filtros
     const tag = req.query.tags;
