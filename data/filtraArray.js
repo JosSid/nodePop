@@ -9,7 +9,7 @@ function filtraArray(string, array) {
     } else if (array[i].toLowerCase().includes(string.toLowerCase())) {
       names.push(array[i]);
       i++;
-    }
+    };
   };
 
   return names;

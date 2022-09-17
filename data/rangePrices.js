@@ -3,9 +3,9 @@
 const Anuncio = require('../models/Anuncio');
 
 function rangePrices(string){
-    let filtro =  {}
+    let filtro =  {};
         
-    const arrStr = string.split('-')
+    const arrStr = string.split('-');
         
     if(string.includes('-')){
         filtro.$gte = parseInt(arrStr[0], 10);

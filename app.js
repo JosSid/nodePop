@@ -52,7 +52,7 @@ app.use(function(err, req, res, next) {
 
   if(err.status === 422) {
     res.locals.message = 'LOS DATOS INTRODUCIDOS EN LA BUSQUEDA NO SON CORRECTOS'
-  }
+  };
 
 
   // render the error page

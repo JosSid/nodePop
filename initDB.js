@@ -1,6 +1,6 @@
 'use strict'
 // readline para la pregunta
-const readline = (require('readline'))
+const readline = (require('readline'));
 
 const instrumentos = require('./data/instrumentos');
 // Conectar a la base de datos
@@ -16,13 +16,13 @@ async function main() {
     const continuar = await pregunta('Estas seguro, seguro, seguro que quieres borrar la base de datos y dejarla en su estado inicial? ( si / no ) ');
 
     if(!continuar) {
-        process.exit()
+        process.exit();
     };
 
     // Inicializar la coleccion de anuncios
     await initAnuncios();
 
-    connection.close()
+    connection.close();
 
 };
 
@@ -33,11 +33,11 @@ main().catch(err => console.log('Se ha producido un error:', err));
 async function initAnuncios() {
     // borrar todos los documentos de anuncios
     const deleted = await Anuncio.deleteMany();
-    console.log(`Eliminados ${deleted.deletedCount} anuncios`)
+    console.log(`Eliminados ${deleted.deletedCount} anuncios`);
 
     // Crear anuncios de inicio
     const inserted = await Anuncio.insertMany(instrumentos);
-    console.log(`Creados ${inserted.length} anuncios.`)
+    console.log(`Creados ${inserted.length} anuncios.`);
 };
 
 function pregunta(texto){
