@@ -17,7 +17,7 @@ ENLACE : [https://swagger.jossidfactory.com](https://swagger.jossidfactory.com/s
 
 ## 2- Despliegue de aplicacion **NODE** :
 
-ENLACE : [https://nodepop.jossidfactory.com](https://nodepop.jossidfactory.com/swagger)
+ENLACE : [https://nodepop.jossidfactory.com](https://nodepop.jossidfactory.com)
 
 Para usar las rutas del api:
 
