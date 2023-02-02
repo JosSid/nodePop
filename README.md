@@ -1,4 +1,4 @@
-# PRACTICA DESPILEGUE EN SERVIDORES :
+# PRACTICA DESPLIEGUE EN SERVIDORES :
 
 ## 1- Despliegue de aplicacion **React** :
 
