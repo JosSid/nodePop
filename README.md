@@ -1,3 +1,30 @@
+# PRACTICA DESPILEGUE EN SERVIDORES :
+
+## 1- Despliegue de aplicacion **React** :
+
+ENLACE : [https://ualaplop.jossidfactory.com](https://ualaplop.jossidfactory.com)
+
+### Puedes hacer login con el eMail y contraseña :
+
+eMail : Jossid@Jossid.com
+
+contraseña : 1234
+
+### O tambien puedes acceder a este enlace y crearte tu propio usuario :
+
+ENLACE : [https://swagger.jossidfactory.com](https://swagger.jossidfactory.com/swagger)
+
+
+## 2- Despliegue de aplicacion **NODE** :
+
+ENLACE : [https://nodepop.jossidfactory.com](https://nodepop.jossidfactory.com/swagger)
+
+Para usar las rutas del api:
+
+ENLACE : [Rutas del api](#rutas-del-api)
+
+#### A continuación puedes consultar la documentación de la aplicacion NODE :
+
 # nodePop
 
 
@@ -43,7 +70,7 @@ const anuncioSchema = mongoose.Schema({
 Para acceder a la pagina de inicio de la web:
 
 ```
-http://localhost:3000/
+https://nodepop.jossidfactory.com/
 ```
 
 
@@ -54,7 +81,7 @@ http://localhost:3000/
 Para acceder a la pagina principal del APi y recibir la lista de todos los anuncios:
 
 ```
-http://localhost:3000/api/anuncios
+https://nodepop.jossidfactory.com/api/anuncios
 ```
 
 ### Para filtrar las busquedas.
@@ -65,12 +92,12 @@ http://localhost:3000/api/anuncios
 
 #### En el Web Site:
 ```
-http://localhost:3000/?tags=<tag>
+https://nodepop.jossidfactory.com/?tags=<tag>
 ```
 
 #### En el API:
 ```
-http://localhost:3000/api/anuncios/?tags=<tag>
+https://nodepop.jossidfactory.com/api/anuncios/?tags=<tag>
 ```
 
 2. Para filtrar si el anuncio es de venta o de busqueda:
@@ -78,31 +105,31 @@ http://localhost:3000/api/anuncios/?tags=<tag>
 Si queremos **filtrar** para obtener los **anuncios** de productos que estan a la **venta** usaremos la ruta:
 #### En el Web Site:
 ```
-http://localhost:3000/?venta=vendo
+https://nodepop.jossidfactory.com/?venta=vendo
 ```
 #### En el API:
 ```
-http://localhost:3000/api/anuncios/?venta=vendo
+https://nodepop.jossidfactory.com/api/anuncios/?venta=vendo
 ```
 Si por el contrario queremos **recibir** los **anuncios** de productos que se **buscan** usaremos la ruta:
 #### En el Web Site:
 ```
-http://localhost:3000/?venta=busco
+https://nodepop.jossidfactory.com/?venta=busco
 ```
 #### En el API:
 ```
-http://localhost:3000/api/anuncios/?venta=busco
+https://nodepop.jossidfactory.com/api/anuncios/?venta=busco
 ```
 
 3. Para filtrar por nombre de anuncio:
 #### En el Web Site:
 ```
-http://localhost:3000/?name=<nombre>
+https://nodepop.jossidfactory.com/?name=<nombre>
 ```
 
 #### En el API:
 ```
-http://localhost:3000/api/anuncios/?name=<nombre>
+https://nodepop.jossidfactory.com/api/anuncios/?name=<nombre>
 ```
 
 4. Para filtrar por precios:
@@ -119,31 +146,31 @@ Ejemplos:
 
 1. En estos casos devolverá solo anuncios cuyo precio sea igual al pasado en el parámetro.
 ```
-http://localhost:3000/?price=350
+https://nodepop.jossidfactory.com/?price=350
 ```
 ```
-http://localhost:3000/api/anuncios/?price=350
+https://nodepop.jossidfactory.com/api/anuncios/?price=350
 ```
 2. En estos casos devolverá los anuncios cuyo precio este dentro del rango que le hemos pasado en el parámetro.
 ```
-http://localhost:3000/?price=350-1000
+https://nodepop.jossidfactory.com/?price=350-1000
 ```
 ```
-http://localhost:3000/api/anuncios/?price=350-1000
+https://nodepop.jossidfactory.com/api/anuncios/?price=350-1000
 ```
 3. En estos casos devolverá los anuncios cuyo precio sea mayor al valor que le hemos pasado en el parámetro.
 ```
-http://localhost:3000/?price=350-
+https://nodepop.jossidfactory.com/?price=350-
 ```
 ```
-http://localhost:3000/api/anuncios/?price=350-
+https://nodepop.jossidfactory.com/api/anuncios/?price=350-
 ```
 4. En estos casos devolverá los anuncios cuyo precio sea menor al valor que le hemos pasado en el parámetro.
 ```
-http://localhost:3000/?price=-1000
+https://nodepop.jossidfactory.com/?price=-1000
 ```
 ```
-http://localhost:3000/api/anuncios/?price=-1000
+https://nodepop.jossidfactory.com/api/anuncios/?price=-1000
 ```
 ### Paginación
 
@@ -156,11 +183,11 @@ Para la paginación usaremos los siguientes parámetros:
 Ejemplos: 
 #### En el Web Site:
 ```
-http://localhost:3000/?skip=2&limit=2
+https://nodepop.jossidfactory.com/?skip=2&limit=2
 ```
 #### En el API:
 ```
-http://localhost:3000/api/anuncios/?skip=2&limit=2
+https://nodepop.jossidfactory.com/api/anuncios/?skip=2&limit=2
 ```
 
 ### Ordenación:
@@ -170,22 +197,22 @@ En caso de que querramos invertir el orden añadiremos antes del **campo** de or
 
 Ejemplos:
 ```
-http://localhost:3000/?sort=price
+https://nodepop.jossidfactory.com/?sort=price
 ```
 #### En el API:
 ```
-http://localhost:3000/api/anuncios/?sort=price
+https://nodepop.jossidfactory.com/api/anuncios/?sort=price
 ```
 ### Todos los parámetros anteriórmente nombrados podemos encadenarlos en la ruta pasando varios filtros al mismo tiempo.
 
 Ejemplos:
 #### En el Web Site:
 ```
-http://localhost:3000/?tags=guitar&venta=vendo&skip=1&limit=3
+https://nodepop.jossidfactory.com/?tags=guitar&venta=vendo&skip=1&limit=3
 ```
 #### En el API:
 ```
-http://localhost:3000/api/anuncios/?tags=guitar&venta=vendo&skip=1&limit=3
+https://nodepop.jossidfactory.com/api/anuncios/?tags=guitar&venta=vendo&skip=1&limit=3
 ```
 
 ### Para actualizar anuncios:
@@ -197,7 +224,7 @@ En la petición le pasaremos la **clave** o **claves** a actualizar y recibiremo
 Utilizaremos la siguiente ruta:
 
 ```
-http://localhost:3000/api/anuncios/<id del anuncio que vamos a actualizar>
+https://nodepop.jossidfactory.com/api/anuncios/<id del anuncio que vamos a actualizar>
 ```
 
 ### Para crear anuncios:
@@ -207,7 +234,7 @@ Haremos una peticion de tipo **POST** en el body en formato **urlencode** para r
 Utilizaremos la siguiente ruta:
 
 ```
-http://localhost:3000/api/anuncios
+https://nodepop.jossidfactory.com/api/anuncios
 ```
 Ejemplo de resultado: 
 
@@ -234,6 +261,6 @@ Ejemplo de resultado:
 Haremos una peticion de tipo **DELETE** pasandole al final de la ruta el **ID** del anuncio que queremos eliminar:
 
 ```
-http://localhost:3000/api/anuncios/< id del anuncio >
+https://nodepop.jossidfactory.com/api/anuncios/< id del anuncio >
 ```
 
