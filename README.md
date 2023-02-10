@@ -53,7 +53,7 @@ npm run dev
 
 ## Modelo de los anuncios.
 
-```
+```json
 const anuncioSchema = mongoose.Schema({
     name: String,
     sale: Boolean,
@@ -238,7 +238,7 @@ https://nodepop.jossidfactory.com/api/anuncios
 ```
 Ejemplo de resultado: 
 
-```
+```json
 {
     "result": {
         "name": "amplifier",
